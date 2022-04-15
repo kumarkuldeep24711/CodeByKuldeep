@@ -1,0 +1,202 @@
+<html>
+<head>
+<title>tip calculator</title>
+<style type="text/css">
+body {
+
+background-color:#990033;
+
+}
+#name{
+width:50%;
+margin-left:300px;
+}
+h1{
+color:#999900;
+text-shadow:2px 2px red;
+text-align:center;
+
+}
+
+#container {
+
+height: 370px;
+
+width: 350px;
+
+margin: 100px auto;
+
+background-color: #f7f7f7;
+border-radius:30px;
+
+
+}
+
+h2 {
+
+background-color:#1F030C ;
+
+color: white;
+
+margin: 0;
+
+padding: 10px 100px;
+
+text-transform: uppercase;
+
+font-size: 16px;
+
+font-weight: bold;
+
+border-top-left-radius: 20px;
+
+border-top-right-radius: 20px;
+
+}
+
+h3{
+
+margin: 0;
+
+
+
+}
+#thanks{
+color:#009933;
+font-weight:bold;
+margin-left:20px;
+font-size:20px;
+}
+
+button {
+
+text-transform:uppercase;
+
+font-weight: bold;
+
+display:block;
+
+margin: 30px auto;
+
+background: #AD133A;
+
+border-radius: 5px;
+
+width: 200px;
+
+height: 50px;
+
+font-size: 15px;
+
+color: white;
+
+}
+
+#calculator{
+padding:10px 10px;
+
+}
+
+#totaltip{
+
+padding: 10px 10px;
+
+}
+
+
+</style>
+</head>
+<body>
+<div id="name"><h1>CODED BY KULDEEP KUMAR</h1><div>
+<div id="container">
+
+<h2>Tip Calculator</h2>
+
+
+
+<div id="calculator">
+<form>
+
+<h3>How much was your bill?</h3>
+
+<input id="billAmt" type="text" placeholder="Bill Amount">
+
+<h3><p>How was your service?</p>
+
+<select id="servicequality">
+
+<option>--Choose One-- </option>
+
+<option value="0.0">0%-Average</option>
+
+<option value="0.1">10%-Good</option>
+
+<option value="0.2">20%-Excellent</option>
+
+</select></h3>
+
+<button type="button" id="calculate">Calculate!</button>
+
+</div>
+
+
+<div id="totaltip">
+<h3>Tip Total:-
+
+<span id="tipTotal">Rs.</span></h3>
+
+<h3>Bill Total:-
+
+<span id="billTotal">Rs.</span></h3>
+<h3><span id="thanks"></span></h3>
+</div></div>
+<script type="text/javascript">
+//Calculate Tip
+
+function calculateTip() {
+
+//getElementById() method returns the element value with specified ID
+
+var billAmt = document.getElementById("billAmt").value;
+
+var servicequality = document.getElementById("servicequality").value;
+
+var tipTotal = document.getElementById("tipTotal").value;
+
+var billTotal = document.getElementById("billTotal").value;
+
+var thanks= document.getElementById("thanks").value;
+//Tip Calculation
+
+var total = billAmt * servicequality;                           //For Tip Calculation
+
+var Total = parseFloat(billAmt) +parseFloat(total);    //For Total bill amount calculation
+
+
+
+//Display  Tip
+
+document.getElementById("tipTotal").innerHTML = total;
+
+//Display Total
+
+document.getElementById("billTotal").innerHTML = Total;
+//diplay thanks
+document.getElementById("thanks").innerHTML = "THANKS! WELCOME AGAIN.";
+
+}
+
+
+//Click to call function
+
+document.getElementById("calculate").onclick = function()
+
+{
+
+calculateTip();
+
+};
+
+</script>
+</body>
+</html>
